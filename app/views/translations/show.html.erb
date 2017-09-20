@@ -1,0 +1,18 @@
+<% def translated(input_text, output_language)
+	translated = HTTParty.get("https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=#{output_language}&dt=t&q=#{input_text}").parsed_response[0][0][0]
+	return translated
+end %>
+
+<h1><strong>Your Translation</strong></h1>
+<h3>Input</h3>
+<p>
+  <%= @translation.text %>
+  <%= @translation.language %>
+</p>
+<h3>Result</h3>
+<p>
+  <%= translated(@translation.text, "es") %>
+</p>
+ 
+
+

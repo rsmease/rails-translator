@@ -1,0 +1,16 @@
+
+<h1>Listing translations</h1>
+ 
+<table>
+  <tr>
+    <th>Translation</th>
+    <th>Link</th>
+  </tr>
+ 
+  <% @translations.each do |translation| %>
+    <tr>
+      <td><%= translation.text %></td>
+      <td><%= link_to 'Show', translation_path(translation) %></td>
+    </tr>
+  <% end %>
+</table>
